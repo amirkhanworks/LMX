@@ -80,12 +80,13 @@ ul { list-style: none; }
 /* ── Headings ── */
 .h1-hero {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(42px, 6vw, 68px);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   color: var(--charcoal);
   margin-bottom: 20px;
+  max-width: 620px;
 }
 .h1-hero--light { color: var(--white); }
 
@@ -834,16 +835,49 @@ textarea { resize: vertical; min-height: 100px; }
 }
 .trust-tick { color: var(--green); font-weight: 700; }
 
-/* ── FAQ ── */
-.faq-list { display: flex; flex-direction: column; gap: 16px; max-width: 720px; }
+/* ── FAQ Accordion ── */
+.faq-list { display: flex; flex-direction: column; gap: 10px; }
+.faq-list { display: flex; flex-direction: column; gap: 10px; max-width: 720px; }
 .faq-item {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
-  padding: 24px 28px;
+  overflow: hidden;
 }
-.faq-q { font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
-.faq-a { font-size: 15px; color: var(--muted); line-height: 1.65; }
+/* Accordion button style */
+button.faq-q {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 24px;
+  background: none; border: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px; font-weight: 700; color: var(--charcoal);
+  text-align: left; gap: 16px;
+  transition: background 0.15s;
+}
+button.faq-q:hover { background: var(--surface); }
+.faq-accordion.open button.faq-q { color: var(--blue); }
+.faq-arrow {
+  font-size: 22px; color: var(--amber); flex-shrink: 0;
+  transition: transform 0.25s ease;
+  display: inline-block; line-height: 1;
+}
+.faq-accordion.open .faq-arrow { transform: rotate(90deg); }
+/* Accordion body */
+div.faq-a {
+  max-height: 0; overflow: hidden;
+  font-size: 15px; color: var(--muted); line-height: 1.7;
+  padding: 0 24px;
+  transition: max-height 0.35s ease, padding 0.3s ease;
+}
+.faq-accordion.open div.faq-a {
+  max-height: 200px;
+  padding: 0 24px 20px;
+}
+/* Static faq-item (non-accordion) fallback */
+.faq-item:not(.faq-accordion) .faq-q {
+  font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px;
+}
+.faq-item:not(.faq-accordion) .faq-a { font-size: 15px; color: var(--muted); line-height: 1.65; }
 
 /* ============================================================
    FOOTER
