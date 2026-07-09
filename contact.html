@@ -125,13 +125,13 @@
             </div>
           </div>
           <div class="form-group">
-            <label>I'm interested in</label>
-            <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="interest" value="smart-home" checked> &#127968; Smart Home Product &mdash; Book a Demo</label>
-              <label class="radio-option"><input type="radio" name="interest" value="services"> &#128295; IoT Engineering Services &mdash; Request a Callback</label>
-              <label class="radio-option"><input type="radio" name="interest" value="partnership"> &#128188; Partnership / Investment</label>
-              <label class="radio-option"><input type="radio" name="interest" value="other"> &#10067; Something else</label>
-            </div>
+            <label for="finterest">I'm interested in</label>
+            <select id="finterest" name="interest">
+              <option value="smart-home">Smart Home Product — Book a Demo</option>
+              <option value="services">IoT Engineering Services — Request a Callback</option>
+              <option value="partnership">Partnership / Investment</option>
+              <option value="other">Something else</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="fmsg">Tell us about your project</label>
@@ -151,10 +151,42 @@
       <span class="eyebrow">Common Questions</span>
       <h2 class="h2">Quick Answers</h2>
     </div>
-    <div class="faq-list">
-      <div class="faq-item"><div class="faq-q">How quickly do you respond?</div><div class="faq-a">We respond to all enquiries within 24 hours. For urgent matters, WhatsApp is fastest.</div></div>
-      <div class="faq-item"><div class="faq-q">Do you work with clients outside India?</div><div class="faq-a">Yes. We've delivered projects in Qatar and work with clients globally. Remote-first, with on-site where needed.</div></div>
-      <div class="faq-item"><div class="faq-q">Is the smart home product available to buy directly?</div><div class="faq-a">Currently we install and demo by appointment. Book a demo and we'll bring it to you.</div></div>
+    <div class="faq-list" style="max-width:760px">
+      <div class="faq-item faq-accordion">
+        <button class="faq-toggle" aria-expanded="false">
+          How quickly do you respond?
+          <span class="faq-arrow">&#8964;</span>
+        </button>
+        <div class="faq-body">We respond to all enquiries within 24 hours. For urgent matters, WhatsApp is fastest.</div>
+      </div>
+      <div class="faq-item faq-accordion">
+        <button class="faq-toggle" aria-expanded="false">
+          Do you work with clients outside India?
+          <span class="faq-arrow">&#8964;</span>
+        </button>
+        <div class="faq-body">Yes. We've delivered projects in Qatar and work with clients globally. Remote-first, with on-site where needed.</div>
+      </div>
+      <div class="faq-item faq-accordion">
+        <button class="faq-toggle" aria-expanded="false">
+          Is the smart home product available to buy directly?
+          <span class="faq-arrow">&#8964;</span>
+        </button>
+        <div class="faq-body">Currently we install and demo by appointment. Book a demo and we'll bring it to you.</div>
+      </div>
+      <div class="faq-item faq-accordion">
+        <button class="faq-toggle" aria-expanded="false">
+          Do I need an electrician to install the Luminox device?
+          <span class="faq-arrow">&#8964;</span>
+        </button>
+        <div class="faq-body">No. The Luminox module fits behind your existing switch with no new wiring. Most customers set it up themselves in under 10 minutes.</div>
+      </div>
+      <div class="faq-item faq-accordion">
+        <button class="faq-toggle" aria-expanded="false">
+          What's the minimum engagement for IoT engineering services?
+          <span class="faq-arrow">&#8964;</span>
+        </button>
+        <div class="faq-body">We offer a fixed-fee consultation session as a low-commitment starting point. From there, we can scope a project or discuss a retainer based on your needs.</div>
+      </div>
     </div>
   </div>
 </section>
